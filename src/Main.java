@@ -40,12 +40,12 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int population = 12_000_000;
-        int birthRate = population / 1000 * 17;
-        int deathRate = population / 1000 * 8;
+        float birthRate = (float) 17/1000;
+        float deathRate = (float) 8/1000;
         int year = 0;
         while (year < 10) {
             year++;
-            population = (birthRate - deathRate) + population;
+            population = (int)(population + (population * birthRate) - (population * deathRate));
             System.out.println("Год " + year + ". Численность населения составляет " + population + " человек.");
         }
         System.out.println("Через 10 лет численность населения будет составлять " + population + " человек.");
